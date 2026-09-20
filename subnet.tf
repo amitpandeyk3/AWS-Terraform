@@ -1,30 +1,30 @@
 resource "aws_subnet" "public_1" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.public_subnet_1_cidr
+  cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1a"
+
   tags = {
-    Name        = "${var.project_name}-${var.environment}-public-1"
-    Environment = var.environment
+    Name = "public-subnet-1"
   }
 }
 
 resource "aws_subnet" "public_2" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.public_subnet_2_cidr
+  cidr_block        = "10.0.2.0/24"
   availability_zone = "us-east-1b"
+
   tags = {
-    Name        = "${var.project_name}-${var.environment}-public-2"
-    Environment = var.environment
+    Name = "public-subnet-2"
   }
 }
 
 resource "aws_subnet" "private_1" {
   vpc_id            = aws_vpc.main.id
-  cidr_block        = var.private_subnet_1_cidr
+  cidr_block        = "10.0.11.0/24"
   availability_zone = "us-east-1a"
+
   tags = {
-    Name        = "${var.project_name}-${var.environment}-private-1"
-    Environment = var.environment
+    Name = "private-subnet-1"
   }
 }
 

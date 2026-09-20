@@ -16,6 +16,12 @@ variable "project_name" {
   default     = "ecommerce"
 }
 
+variable "bucket_prefix" {
+  description = "Prefix used for the S3 bucket name"
+  type        = string
+  default     = "ecommerce-learning-"
+}
+
 variable "public_subnet_1_cidr" {
   description = "CIDR block for the public subnet 1"
   type        = string
